@@ -1,7 +1,7 @@
 let currentQuestionIndex = 0;
 let questions = [];
 
-fetch('questions.json')
+fetch('questions_full.json')
   .then(response => response.json())
   .then(data => {
     questions = data;
@@ -40,4 +40,5 @@ function checkAnswer(selectedOption) {
 function nextQuestion() {
   currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
   loadQuestion();
+
 }
